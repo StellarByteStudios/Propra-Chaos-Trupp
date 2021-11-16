@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Anmeldung</title>
+</head>
+    <body>
+        <form method="post" th:object="${Student}" class="table">
+            <table border="1">
+                <tr>
+                    <td>
+                        <label for="a" style="font-weight: bold">GitHub Name</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" step="any" name="a" id="a" th:field="*{gitHubName}">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="b" style="font-weight: bold">Name</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" name="b" id="b" th:field="*{name}">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="c" style="font-weight: bold">Matrikelnummer</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="number" step="any" name="c" id="c" th:field="*{matrikelnr}">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="c" style="font-weight: bold">Unikennung</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" name="d" id="d" th:field="*{unikennung}">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="submit">Registrieren</button>
+                    </td>
+                </tr>
+
+            </table>
+        </form>
+    <br>
+    Hier gehts zu den Anmeldungen
+    </body>
+</html>

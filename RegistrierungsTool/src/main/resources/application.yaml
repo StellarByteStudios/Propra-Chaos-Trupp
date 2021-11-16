@@ -1,0 +1,11 @@
+spring:
+    flyway:
+        schemas: RegistrierungsTool
+        create-schemas: true
+        url: jdbc:mariadb://localhost:3306/
+        user: root
+        password: 123456789
+    datasource:
+        url: jdbc:mariadb://localhost:3306/RegistrierungsTool
+        username: root
+        password: 123456789

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thymeleaf Example</title>
+    <link rel="stylesheet"
+        th:href="@{css/bootstrap.min.css}"
+        href="/css/bootstrap.min.css">
+</head>
+<body>
+<main class="container">
+    <h1>Thymeleaf</h1>
+
+    <h2>Natural Templating</h2>
+    <ul>
+        <li>Normale, valide HTML Dateien</li>
+        <li>Können direkt im Browser angezeigt werden</li>
+        <li>Einfache Entwicklungs-Iterationen mit Designer:innen!</li>
+        <li>Vergleich <a href="thymeleaf_example.html">Thymeleaf</a>
+            vs. <a href="mustache_example.html">Mustache</a>
+        </li>
+    </ul>
+    <h2>Attribute</h2>
+    <ul>
+        <li>Entweder <span class="text-monospace">th:attr</span> oder
+            <span class="text-monospace">data-th-attr</span></li>
+        <li>Überschreiben von Standard-Attributen</li>
+        <li>Attribute und Thymeleaf-Attribute gleichzeitig sinnvoll
+            (siehe <span class="text-monospace">&lt;link&gt;</span> Tag in dieser Datei)
+        </li>
+        <li>Zusätzliche Attribute für Schleifen, Conditionals, Content-Ersetzung</li>
+    </ul>
+    <h2>Expression Language</h2>
+    <ul>
+        <li>Einsetzen von Ausdrücken mit <span class="text-monospace">${expr}</span>
+            <ul>
+                <li>Variablen: <span class="text-monospace">${name}</span></li>
+                <li>Attribute von Objekten: <span class="text-monospace">${user.name}</span> (User hat ein öffentliches
+                    Attribut oder einen Getter)
+                </li>
+                <li>Ergebnisse von Methodenaufrufen: <span class="text-monospace">${user.berechneSaldo()}</span></li>
+                <li>Ergebnisse von Java Ausdrücken:
+                    <span class="text-monospace">${user.berechneSaldo() > 10000 ? 'Goldkunde' : 'Joe Shmoe' }</span>
+                </li>
+                <li>Statische Methoden <span class="text-monospace">${T(java.lang.Long).bitCount(2374682374L)}}</span>
+                </li>
+            </ul>
+        </li>
+        <li>Ersetzungen in Textliteralen (Literal substitutions)
+            <span class="text-monospace">|Welcome to our application, ${user.name}!|</span><br>
+            <em class="small">Es ist eingeschränkt, was erlaubt ist. Ggf. lieber mehrere &lt;span&gt; nutzen.</em>
+        </li>
+        <li>Besondere Hilfs-Objekte (siehe <a
+                href="https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#expression-utility-objects">Dokumentation</a>)<br>
+            Beispiel <span class="text-monospace">#calendars</span>: <span class="text-monospace">${#calendars.format(termin,'dd.MM.yyyy')}</span>
+            <em class="small">Besser thymeleaf-extras-java8time als Dependency laden.
+            </em>
+        </li>
+        <li>URLs
+            <ul>
+                <li>Pfad-Parameter: <span
+                        class="text-monospace">@{/greeter/greet/{name}/{staerke}(name=${name}, staerke=3)}</span></li>
+                <li>Query-Parameter<span class="text-monospace">@{/greeter/greet(name=${name}, strength=${strength.length() * 2})}</span>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <h2>Kontrollstrukturen</h2>
+    <ul>
+        <li>Bedingtes Einfügen <span class="text-monospace">&lt;p th:if="${expr}"&gt;...&lt;/p&gt;</span></li>
+        <li>Schleifen <span
+                class="text-monospace">&lt;li th:each="e : ${listExpr}" th:text="${e}"&gt;...&lt;/li&gt;</span></li>
+        <ol type="a">
+            <li><span class="text-monospace">th:remove="all-but-first"</span></li>
+            <li>
+                <span class="text-monospace">th:object</span> und
+                <span class="text-monospace">*{attribute}</span>
+            </li>
+        </ol>
+    </ul>
+
+    <h2>Interessante Aspekte der Ausdruckssprache</h2>
+    <ul>
+        <li>Safe Navigation<span class="text-monospace">${user?.konto?.saldo}</span></li>
+        <li>Elvis Operator <span class="text-monospace">${name} ?: 'unbekannt'</span></li>
+    </ul>
+
+</main>
+</body>
+</html>

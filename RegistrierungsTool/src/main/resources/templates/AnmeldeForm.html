@@ -5,7 +5,7 @@
     <title>Anmeldung</title>
 </head>
     <body>
-        <form method="post" th:object="${Student}" class="table">
+        <form method="post" th:object="${student}" class="table">
             <table border="1">
                 <tr>
                     <td>
@@ -55,7 +55,10 @@
 
             </table>
         </form>
-    <br>
-    Hier gehts zu den Anmeldungen
+        <br>
+        Hier gehts zu den Anmeldungen
+        <form action="liste" method="get" th:object="${student}" class="table">
+            <button type="submit">Liste der Angemeldeten</button>
+        </form>
     </body>
 </html>

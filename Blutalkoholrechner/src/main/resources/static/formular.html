@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alkoholtest</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<body>
+
+<h1>Willkommen beim Alkoholtest</h1>
+<h2>bitte gib deine Werte ein</h2>
+
+<form method="get" action="alk/alkoholeingabe"  class="align-content-center">
+
+    <label for="a">Geschlecht</label>
+    <input type="text" name="geschlecht" id="a" list="geschlechter">
+    <datalist id="geschlechter">
+        <option value="Männlich">
+        <option value="Weiblich">
+    </datalist>
+    <br>
+
+    <label for="a">Gewicht</label>
+    <input type="number" name="gewicht" id="b" value="75">
+    <br>
+    <br>
+
+    <label for="a">Bier in ml</label>
+    <input type="number" name="bier" id="c" value="0">
+    <br>
+    <label for="a">Wein in ml</label>
+    <input type="number" name="wein" id="d" value="0">
+    <br>
+    <label for="a">Korn in ml</label>
+    <input type="number" name="korn" id="e" value="0">
+    <br>
+    <label for="a">Vodka in ml</label>
+    <input type="number" name="vodka" id="f" value="0">
+    <br>
+    <label for="a">Whiskey in ml</label>
+    <input type="number" name="whiskey" id="g" value="0">
+    <br>
+    <br>
+
+    <button type="submit">Berechnen</button>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Anmeldungen</title>
+</head>
+    <body>
+        <h1>Alle Einträge</h1>
+        <table cellpadding="10" class="table" border="1">
+            <thead>
+            <tr>
+                <th>GithubName</th>
+                <th>Name</th>
+                <th>Mat. Nr.</th>
+                <th>Unikennung</th>
+            </tr>
+            </thead>
+            <tbody th:remove="all-but-first" th:each="zeile : ${student}" th:object="${student}">
+            <tr>
+                <td th:text="*{gitHubName}">1</td>
+                <td th:text="*{name}">1000</td>
+                <td th:text="*{matrikelnr}">1000</td>
+                <td th:text="*{unikennung}">2000</td>
+            </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

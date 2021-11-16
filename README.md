@@ -6,4 +6,5 @@ Hier sammeln wir alle Projekte, die wir im Laufe des Moduls Propra so entwickeln
 
 ## Projekte
 
-1. Zinsrechner
+1. Zinsrechner (noch nicht drauf)
+2. Registrierungstool

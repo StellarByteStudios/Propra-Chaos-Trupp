@@ -8,7 +8,7 @@ public record Zins (double anfangskapital, int laufzeit, double zinssatz, boolea
 
     public double endkapitalBerechnen() {
 
-        double endkapital = anfangskapital*Math.pow(1+zinssatz,laufzeit);
+        double endkapital = anfangskapital*Math.pow(1+(zinssatz/100),laufzeit);
         endkapital = (int)(endkapital * 100) / 100.0;
         return endkapital;
     }
@@ -20,9 +20,9 @@ public record Zins (double anfangskapital, int laufzeit, double zinssatz, boolea
         double endkapital;
 
         for (int i = 1; i <= laufzeit; i++) {
-            endkapital = anfangswert*(1+zinssatz);
+            endkapital = anfangswert*(1+(zinssatz/100));
             endkapital = (int)(endkapital * 100) / 100.0;
-            zinsen = anfangswert*zinssatz;
+            zinsen = anfangswert*(zinssatz/100);
             zinsen = (int)(zinsen * 100) / 100.0;
             zeilen.add(new Zeile(i, anfangswert, zinsen, endkapital));
             anfangswert = endkapital;

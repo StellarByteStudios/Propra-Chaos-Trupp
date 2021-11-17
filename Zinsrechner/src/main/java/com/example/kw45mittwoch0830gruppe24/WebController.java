@@ -14,7 +14,11 @@ public class WebController {
 
     @GetMapping("/")
     public String index(Model model){
-        model.addAttribute("zins",new Zins(5000,5,0.05, false));
+        model.addAttribute("zins",new Zins(5000,5,2, false));
+        model.addAttribute("laufzeit" ,0);
+        model.addAttribute("zinssatz" ,0);
+        model.addAttribute("anfangskapital" ,0);
+        model.addAttribute("endkapital" ,0);
         return "Formular";
     }
 

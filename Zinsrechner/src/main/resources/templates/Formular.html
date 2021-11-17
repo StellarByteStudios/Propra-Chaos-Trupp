@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <title>Title</title>
+</head>
+<body>
+<div class="container pt-5">
+<h1>Wunderschöner Zinsrechner und so</h1>
+    <table cellpadding="10" border="1">
+        <td class="list-group-horizontal" >
+            <form method="post" th:object="${zins}" class="table">
+                <table>
+                    <tr>
+                        <td>
+                            <label for="a" style="font-weight: bold">Anfangskapital</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="number" step="any" name="a" id="a" th:field="*{anfangskapital}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="b" style="font-weight: bold">Laufzeit</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="number" name="b" id="b" th:field="*{laufzeit}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="c" style="font-weight: bold">Zinssatz (% p.a))</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="number" step="any" name="c" id="c" th:field="*{zinssatz}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" name="d" id="d" th:field="*{tabelle}">
+                            <label for="d">Tabelle anzeigen</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        <button class="btn btn-primary" type="submit">Berechnen</button>
+                        </td>
+                    </tr>
+
+                </table>
+            </form>
+        </td>
+        <td valign="top" style="max-width: 30em" class="list-group-horizontal" >
+            <p>
+                <span style="font-weight: bold; font-size: large">Ergebnis</span> <br>
+                Bei einer Laufzeit von <span th:text="${laufzeit}">_noch keine_</span> Jahren bei einem konstanten Zinssatz von
+                <span th:text="${zinssatz}">_noch keiner_</span> % p.a und einem Anfangskapital von <span th:text="${anfangskapital}"></span> Euro, betragt das
+                Endkapital <span th:text="${endkapital}">_noch keines_</span> Euro.
+            </p>
+
+            <table th:if="${zins.tabelle()}" cellpadding="10" class="table">
+                <thead>
+                <tr>
+                    <th>Jahr</th>
+                    <th>Anfangswert</th>
+                    <th>Zinsen</th>
+                    <th>Endkapital</th>
+                </tr>
+                </thead>
+                <tbody th:remove="all-but-first" th:each="zeile : ${zeile}" th:object="${zeile}">
+                    <tr>
+                        <td th:text="*{jahr}">1</td>
+                        <td th:text="*{anfangswert} + ' €'">1000</td>
+                        <td th:text="*{zinsen} + ' €'">1000</td>
+                        <td th:text="*{endkapital} + ' €'">2000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+    </table>
+</div>
+</body>
+</html>

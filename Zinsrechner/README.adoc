@@ -1,0 +1,48 @@
+= Softwareentwicklung im Team: Praktische Übung 1
+:icons: font
+:icon-set: fa
+:experimental:
+:source-highlighter: rouge
+ifdef::env-github[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+:stem: latexmath
+endif::[]
+
+== Vorbereitung 
+
+Die Vorbereitungsarbeiten müssen Sie *vor der praktischen Übung* abschließen. 
+ 
+Wir erwarten von Ihnen, dass Sie verstanden haben, wie Spring Web MVC und Thymeleaf funktioniert. Sie sollten auch mit HTML und einer CSS Bibliothek wie Bootstrap vertraut sein.
+
+Sie müssen in der Lage sein, die Alkomat Anwendung (Siehe Leitfragen, Wochenblatt 2) selber schreiben zu können. Sie sollten auch verstanden haben, wie Sie bestimmte Teile einer Webseite mit Thymeleaf ein- bzw. ausblenden können. Beim Alkomaten könnten Sie beispielsweise die Anzeige der Promille ausblenden, wenn es noch keine Daten gibt, oder die Daten fehlerhaft sind.
+
+== Ziele der Übung
+
+In der Übung sollen Sie eine kleine Webanwendung mit Spring Web MVC implementieren. Sie sollen den Umgang mit Templates und Controllern einüben.
+
+== Aufgabe
+
+Die konkrete Aufgabenstellung erhalten Sie am Anfang Ihrer Übung. Es wird eine Webanwendung sein, die ein Formular verarbeitet, ähnlich zum Alkomaten. 
+
+== Ablauf der Übung
+
+. Schalten Sie *mindestens* das Mikrofon, aber besser auch die Kamera, ein 
+. Am Anfang gibt es eine kurze Vorstellungsrunde 
+. Es wird festgelegt, in welcher Reihenfolge die "Driver" Rolle übernommen wird
+. Die erste Person teilt Ihren Screen und übernimmt mithilfe von `mob` die Session
+. Es wird an der Problemstellung gemeinsam gearbeitet nach den Regeln des Mob Programmings 
+. Nach ca. der Hälfte der Zeit gibt es ein Feedback durch die Tutorin oder den Tutor
+. Es wird weiter an der Problemstellung gearbeitet
+. ca. 10 Minuten vor Ende der Session bekommen Sie Ihre Abschlussbewertung 
+
+NOTE: Diese praktische Übung wird für die Zulassung gewertet. Sie müssen vorbereitet sein und einen hinreichenden Beitrag leisten. 
+
+
+== Verhaltensregeln
+
+Wir erwarten von Ihnen einen respektvollen Umgang miteinander. Es gilt grundsätzlich bei uns der https://berlincodeofconduct.org/de/[Berlin Code of Conduct]. Die TutorInnen haben die Aufgabe, die Einhaltung der Regeln zu überwachen und können bei Verstößen gegen den Verhaltenskodex Personen aus der praktischen Übung entfernen.   
+

@@ -1,6 +1,7 @@
 package tictactoe.web;
 
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +35,17 @@ public class GameControllerTest {
     @Test
     @DisplayName("Die richtige Seite wird angezeigt mit Button")
     void test_2() throws Exception {
+        MvcResult startseite = mvc.perform(get("/"))
+                .andReturn();
+
+        String startHTML = startseite.getResponse().getContentAsString();
+        assertThat(startHTML).contains("<button class=\"btn btn-primary\">Neues Spiel starten</button>");
+    }
+
+    @Test
+    @Disabled
+    @DisplayName("Die richtige Seite wird angezeigt mit Button")
+    void test_3() throws Exception {
         MvcResult startseite = mvc.perform(get("/"))
                 .andReturn();
 

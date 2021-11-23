@@ -15,12 +15,12 @@
                 <th>Unikennung</th>
             </tr>
             </thead>
-            <tbody th:remove="all-but-first" th:each="zeile : ${student}" th:object="${student}">
+            <tbody th:remove="all-but-first" th:each="Student : ${students}" th:object="${student}">
             <tr>
-                <td th:text="*{gitHubName}">1</td>
-                <td th:text="*{name}">1000</td>
-                <td th:text="*{matrikelnr}">1000</td>
-                <td th:text="*{unikennung}">2000</td>
+                <td th:text="*{students.gitHubName}">1</td>
+                <td th:text="*{students.name}">1000</td>
+                <td th:text="*{students.matrikelnr}">1000</td>
+                <td th:text="*{students.unikennung}">2000</td>
             </tr>
             </tbody>
         </table>

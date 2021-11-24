@@ -17,7 +17,7 @@ Hier sammeln wir alle Projekte, die wir im Laufe des Moduls Propra so entwickeln
     *Praktische Übung*  
     Man kann einen Benutzer und eine Nachricht abgeben. Diese werden dann gespeichert und man kann alle bisher abgegebenen Nachrichten einsehen und auch nach Autor sortieren
 5. ### TicTacToe
-    *Praktische Übung*
+    *Praktische Übung*  
     Man kann halt Tic tac toe spielen
 
 ## Vorlagen

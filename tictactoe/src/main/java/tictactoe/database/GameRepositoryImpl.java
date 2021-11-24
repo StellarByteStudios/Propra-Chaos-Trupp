@@ -20,7 +20,8 @@ public class GameRepositoryImpl implements GameRepository {
 
   @Override
   public Game loadGame(String gameId) {
-    return dummy.get(gameId);
+    Game game = new Game(gameId);
+    return game;
   }
 
   @Override

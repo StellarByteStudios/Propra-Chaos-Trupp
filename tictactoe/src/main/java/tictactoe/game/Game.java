@@ -8,6 +8,11 @@ public class Game {
   private Board board;
   private final UUID id;
 
+  public Game(UUID gameid) {
+    this.id = gameid;
+    board = new Board();
+  }
+
   public Game() {
     board = new Board();
     id = UUID.randomUUID();

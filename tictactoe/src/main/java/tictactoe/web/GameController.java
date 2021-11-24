@@ -9,7 +9,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import tictactoe.game.Game;
 import tictactoe.service.GameService;
 
-
 @Controller
 public class GameController {
 

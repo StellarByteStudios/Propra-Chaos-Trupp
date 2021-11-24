@@ -1,28 +1,18 @@
 package tictactoe.web;
 
-
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.mockito.stubbing.OngoingStubbing;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.MockMvcAutoConfiguration;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import tictactoe.game.Game;
 import tictactoe.service.GameService;
 
-
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.verify;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest
@@ -35,56 +25,51 @@ public class GameControllerTest {
     GameService service;
 
     @Test
-    @DisplayName("Bei einem / Aufruf wird die Startseite gezeigt")
-    void test_1() throws Exception {
+    @DisplayName("Die Startseite wird richtig angezeigt")
+    void test_01() throws Exception{
         mvc.perform(get("/"))
                 .andExpect(status().isOk());
     }
 
     @Test
-    @DisplayName("Die richtige Seite wird angezeigt mit Button")
-    void test_2() throws Exception {
-        MvcResult startseite = mvc.perform(get("/"))
-                .andReturn();
-
-        String startHTML = startseite.getResponse().getContentAsString();
-        assertThat(startHTML).contains("""
-                <button class="btn btn-primary">Neues Spiel starten</button>
-                """);
+    @DisplayName("Teste Redirect von Postmapping auf 'starten'")
+    void test_02() throws Exception{
+        mvc.perform(post("/starten"))
+                        .andExpect(status().is3xxRedirection());
     }
 
     @Test
-    @DisplayName("Redirect funktioniert auf /game")
-    void test_3() throws Exception {
-        mvc.perform(post("/starten")
-                        .param("gameID","1")
-                        .param("player","X"))
-                        .andExpect(status()
-                        .is3xxRedirection());
-
+    @DisplayName("Teste Redirect von Getmapping auf 'beitreten'")
+    void test_03() throws Exception{
+        mvc.perform(get("/beitreten")
+                        .param("gameId", "1"))
+                .andExpect(status().is3xxRedirection());
     }
 
     @Test
-    @Disabled
-    @DisplayName("Das game Objekt wird an das Model übergeben")
-    void test_4() throws Exception {
-        Game gameMock = mock(Game.class);
-        when(service.getGame("1")).thenReturn(gameMock);
-        when(gameMock.id()).thenReturn("1");
-        when(gameMock.active("X")).thenReturn(true);
-//        Game game = new Game();
-        mvc.perform(get("/game")
-                        .param("gameID", "1")
-                        .param("player","X"))
-                .andExpect(model().attribute("game", gameMock));
-
+    @DisplayName("Teste Redirect für das Ziehen")
+    void test_04() throws Exception{
+        mvc.perform(post("/ziehen")
+                        .param("gameId", "1")
+                        .param("player", "O")
+                        .param("row", "1")
+                        .param("column", "1"))
+                .andExpect(status().is3xxRedirection());
     }
+
+    // Hier wird der Aufruf der Services getestet
 
     @Test
-    @Disabled
-    @DisplayName("Wenn das Spiel gewonnen wurde wird dies auch angezeigt")
-    void test_5() throws Exception{
+    @DisplayName("Verify ob die Geschäftslogik aufgerufen wird")
+    void test_05() throws Exception{
+        mvc.perform(post("/ziehen")
+                        .param("gameId", "fünfzig")
+                        .param("player", "O")
+                        .param("row", "1")
+                        .param("column", "2"));
 
-
+        verify(service).makeAMove("fünfzig",1,2);
     }
+
+
 }

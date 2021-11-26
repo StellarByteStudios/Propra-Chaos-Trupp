@@ -19,4 +19,6 @@ public class UserHandlingService {
     public void saveNewUser(User newUser){
         dataSchnittstelle.saveNewUser(newUser);
     }
+
+    // Hohle einen User aus der Datenbank mithilfe seines Namens
 }

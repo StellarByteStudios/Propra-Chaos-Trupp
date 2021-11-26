@@ -1,5 +1,5 @@
-Insert into User (Username)
-Values ('Martin'),
+insert into User (Username)
+values ('Martin'),
        ('Jana'),
        ('Moritz'),
        ('User1'),

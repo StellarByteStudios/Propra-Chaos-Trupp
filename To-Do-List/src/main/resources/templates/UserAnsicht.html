@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <title>Deine Liste</title>
+</head>
+<body>
+    <!-- Überschrift und co-->
+    <div>
+        <h1 style="text-align: center">Willkommen</h1>
+        <p class="blockquote">
+            Guten Tag, <span th:text="*{user.username()}">username</span>. Du Hast in der Datenbank die ID:<span th:text="*{user.userID()}">ID</span>
+        </p>
+    </div>
+
+    <div class="align-content-center">
+        Hier kannst du nun deine eigene To-Do-Liste sehen:
+    </div>
+
+</body>
+</html>

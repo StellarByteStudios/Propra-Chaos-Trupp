@@ -9,14 +9,38 @@
     <!-- Überschrift und co-->
     <div>
         <h1 style="text-align: center">Willkommen</h1>
+        <!-- Begrüßung -->
         <p class="blockquote">
             Guten Tag, <span th:text="*{user.username()}">username</span>. Du Hast in der Datenbank die ID:<span th:text="*{user.userID()}">ID</span>
         </p>
     </div>
+    <!-- Hab ich die Liste -->
+    <div>
+        Die ID deiner Liste ist: <span th:text="*{todoliste.ListID()}"></span>
+    </div>
 
-    <div class="align-content-center">
+    <!-- Jetzt alle einträge -->
+    <div>
         Hier kannst du nun deine eigene To-Do-Liste sehen:
     </div>
+    <hr>
+    <table>
+        <thead>
+            <tr>
+                <th>EintragID</th>
+                <th>Beschreibung</th>
+                <th>Done</th>
+            </tr>
+        </thead>
+        <tbody th:remove="all-but-first" th:each="ListEntity : ${entities}" th:object="${entity}">
+            <tr>
+                <td th:text="*{entities.id}">1</td>
+                <td th:text="*{entities.task}">mein Task</td>
+                <td th:text="*{entities.done}">true</td>
+                <td th:text="*{entities.listID}">true</td>
+            </tr>
+        </tbody>
+    </table>
 
 </body>
 </html>

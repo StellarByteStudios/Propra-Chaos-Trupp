@@ -25,8 +25,8 @@ public class AnmeldeRegistrierungsController {
 
     @PostMapping("/registrieren")
     public String registrieren(User newUser){
-        //userService.saveNewUser(newUser);
-        System.out.println("Neuer User: " + newUser.username());
+        userService.saveNewUser(newUser);
+        //System.out.println("Neuer User: " + newUser.username());
         return "ErfolgreichRegistriert";
     }
 

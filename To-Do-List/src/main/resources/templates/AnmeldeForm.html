@@ -2,9 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
     <title>Anmeldung</title>
 </head>
 <body>
+    <div class="container">
+        <!-- Überschrift und co-->
+        <div style="text-align: center">
+            <h1>Anmeldung</h1>
+            <p class="blockquote">
+                Wenn du Registriert bist, kannst du dich jetzt hier Anmelden
+            </p>
+        </div>
 
+        <div class="container">
+            <!-- Hier kann man sich mit seinem Namen Anmelden -->
+            <table class="table">
+                <!-- Anmeldung -->
+                <tr>
+                    <form method="post" action="/anmeldung">
+                        <div class="form-group">
+                            <lable for="Name">Bitte Trage deinen Username ein</lable>
+                            <input class="form-control" type="text" name="UsernameInput" id="a" placeholder="Gib bitte deinen Namen ein">
+                        </div>
+                        <button class="btn btn-primary" type="submit">Anmelden</button>
+                    </form>
+                </tr>
+                <hr>
+                <!-- Zurück zum Registrieren -->
+                <tr>
+                    <form method="get" action="/">
+                        <button class="btn btn-secondary" type="submit">Noch keinen Accound</button>
+                    </form>
+                </tr>
+            </table>
+        </div>
+    </div>
 </body>
-</html>
+</html>>

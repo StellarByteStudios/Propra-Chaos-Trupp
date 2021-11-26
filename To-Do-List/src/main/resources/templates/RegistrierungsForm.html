@@ -5,32 +5,37 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <title>Registrierung</title>
 </head>
-  <body>
-    <div id="main" class="container">
+<body>
+    <div class="container">
         <!-- Überschrift und co-->
-        <div>
+        <div style="text-align: center">
             <h1>Online To-Do-Listen</h1>
-            <p>
+            <p class="blockquote">
                 Willkommen zu meiner online To-Do-Listen App. Registriere dich oder melde dich an um deine To-Do-Liste zu benuztzen
             </p>
         </div>
 
-
-        <!-- Outer Table (Oben Registrierung, unten bereits registriert -> anmelden) -->
-        <table>
-            <!-- Registrierung -->
-            <tr>
-                <form method="post" class="table">
-                    <div class="form-group">
-                        <lable for="Name">Bitte Trage deinen Username ein</lable>
-                        <input class="form-control" type="text" name="UsernameInput" id="a" placeholder="Gib bitte deinen Namen ein">
-                    </div>
-                    <button class="btn btn-primary" type="submit">Registrierung abschließen</button>
-                    <hr>
-                    <button class="btn btn-light" type="submit">Schon einen Accound</button>
-                </form>
-            </tr>
-        </table>
+        <div class="container-sm">
+            <!-- Oben Registrierung, unten bereits registriert -> anmelden) -->
+            <table class="table">
+                <!-- Registrierung -->
+                <tr>
+                    <form method="post" action="/registrieren">
+                        <div class="form-group">
+                            <lable for="Name">Bitte Trage deinen Username ein</lable>
+                            <input class="form-control" type="text" name="UsernameInput" id="a" placeholder="Gib bitte deinen Namen ein">
+                        </div>
+                        <button class="btn btn-primary" type="submit">Registrierung abschließen</button>
+                    </form>
+                </tr>
+                <hr>
+                <tr>
+                    <form method="get" action="/anmeldeform">
+                        <button class="btn btn-secondary" type="submit">Schon einen Accound</button>
+                    </form>
+                </tr>
+            </table>
+        </div>
     </div>
-  </body>
+</body>
 </html>

@@ -67,6 +67,22 @@ public class DBSchnittstelle {
         return users.get(0);
     }
 
+    // User mithilfe seiner ID aus der Datenbank fischen
+    public User getUserByID(int userID) {
+        String sqlget = """
+                select *
+                from User
+                where UserID = ?;
+                """;
+        // Ziehen der Daten aus der Datenbank
+        List<User> users= dataBank.query(sqlget, DBSchnittstelle::userMappper,userID);
+
+        // Passiert, wenn der Name nicht in der Datenbank ist
+        if (users.size() != 1) { return null; }
+        // Normalfall
+        return users.get(0);
+    }
+
     // Liste eines Nutzers aus der Datenbank holen
     public ToDoListe getListFromUserID(int userID) {
         String sqlget = """
@@ -123,4 +139,6 @@ public class DBSchnittstelle {
 
         return new ListEntity(id, task, done, listID);
     }
+
+
 }

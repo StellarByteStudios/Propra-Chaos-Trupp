@@ -20,7 +20,22 @@
     <div class="container-sm">
         Die ID deiner Liste ist: <span th:text="*{todoliste.ListID()}"></span>
     </div>
+    <hr>
+    <!-- Neuen Eintrag erstellen -->
+    <div class="container-sm">
+        Erstelle hier einen neuen Eintrag:
+        <form method="post" th:action="@{/eintragAnlegen/} + ${user.userID}">
+            <table>
+                <tr>
+                    <textarea class="form-control" rows="3" name="task" placeholder="Was musst du noch erledigen?"></textarea>
+                </tr>
+                <tr>
+                    <button type="submit" class="btn-primary">Merken</button>
+                </tr>
 
+            </table>
+        </form>
+    </div>
     <!-- Jetzt alle einträge -->
     <div class="container-sm">
         Hier kannst du nun deine eigene To-Do-Liste sehen:

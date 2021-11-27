@@ -24,9 +24,20 @@ public class UserHandlingService {
         dataSchnittstelle.saveNewUser(newUsername);
     }
 
+    // Neuen Eintrag in
+    public void setNewEntryInList(ToDoListe liste, String task) {
+        dataSchnittstelle.saveNewListEntity(liste.ListID(), task);
+    }
+
     // Hohle einen User aus der Datenbank mithilfe seines Namens
     public User getUserByName(String name){
         User user = dataSchnittstelle.getUserByName(name);
+        return user;
+    }
+
+    // Hole einen User anhand seiner ID
+    public User getUserById(int userID) {
+        User user = dataSchnittstelle.getUserByID(userID);
         return user;
     }
 

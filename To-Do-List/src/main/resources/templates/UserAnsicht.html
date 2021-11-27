@@ -39,7 +39,7 @@
             <tr class="table-bordered">
                 <td th:text="*{id}">1</td>
                 <td th:text="*{task}">mein Task</td>
-                <td th:text="*{done}">true</td>
+                <td><input type="checkbox" name="done" th:checked="*{done}"></td>
             </tr>
             </tbody>
         </table>

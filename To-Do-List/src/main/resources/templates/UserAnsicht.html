@@ -10,37 +10,39 @@
     <div>
         <h1 style="text-align: center">Willkommen</h1>
         <!-- Begrüßung -->
-        <p class="blockquote">
-            Guten Tag, <span th:text="*{user.username()}">username</span>. Du Hast in der Datenbank die ID:<span th:text="*{user.userID()}">ID</span>
-        </p>
+        <div class="container-sm">
+            <p class="blockquote">
+                Guten Tag, <span th:text="*{user.username()}">username</span>. Du Hast in der Datenbank die ID:<span th:text="*{user.userID()}">ID</span>
+            </p>
+        </div>
     </div>
     <!-- Hab ich die Liste -->
-    <div>
+    <div class="container-sm">
         Die ID deiner Liste ist: <span th:text="*{todoliste.ListID()}"></span>
     </div>
 
     <!-- Jetzt alle einträge -->
-    <div>
+    <div class="container-sm">
         Hier kannst du nun deine eigene To-Do-Liste sehen:
     </div>
     <hr>
-    <table>
-        <thead>
-            <tr>
+    <div class="container-sm">
+        <table class="table">
+            <thead>
+            <tr class="table-header">
                 <th>EintragID</th>
                 <th>Beschreibung</th>
                 <th>Done</th>
             </tr>
-        </thead>
-        <tbody th:remove="all-but-first" th:each="ListEntity : ${entities}" th:object="${entity}">
-            <tr>
-                <td th:text="*{entities.id}">1</td>
-                <td th:text="*{entities.task}">mein Task</td>
-                <td th:text="*{entities.done}">true</td>
-                <td th:text="*{entities.listID}">true</td>
+            </thead>
+            <tbody th:remove="all-but-first" th:each="ListEntity : ${entities}" th:object="${ListEntity}">
+            <tr class="table-bordered">
+                <td th:text="*{id}">1</td>
+                <td th:text="*{task}">mein Task</td>
+                <td th:text="*{done}">true</td>
             </tr>
-        </tbody>
-    </table>
-
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>

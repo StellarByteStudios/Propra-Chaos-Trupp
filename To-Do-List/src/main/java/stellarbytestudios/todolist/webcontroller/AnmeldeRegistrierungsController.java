@@ -55,7 +55,7 @@ public class AnmeldeRegistrierungsController {
             System.out.println("Anmeldung ist Fehlgeschlagen");
             return "AnmeldungFehlgeschlagen";
         }
-        System.out.println(angemeldeter.username() + "hat sich angemeldet");
+        System.out.println(angemeldeter.username() + " hat sich angemeldet");
 
         // Die zum User gehörige To-Do-Liste aus der Datenbank holen
         ToDoListe liste = userService.getListFromUser(angemeldeter);
@@ -66,17 +66,12 @@ public class AnmeldeRegistrierungsController {
         }
 
         // Hole alle Einträge aus der Liste
-        //List<ListEntity> entities = userService.getAllEntities(liste);
-        ListEntity ent1 = new ListEntity(1,"Task 1", false, 1);
-        ListEntity ent2 = new ListEntity(2,"Task 2", false, 1);
-        ListEntity ent3 = new ListEntity(3,"Task 3", false, 1);
-
-        List<ListEntity> entities = List.of(ent1, ent2, ent3);
+        List<ListEntity> entities = userService.getAllEntities(liste);
 
         // Regelfall
         m.addAttribute("user", angemeldeter);
         m.addAttribute("todoliste", liste);
-        //m.addAttribute("entities", entities);
+        m.addAttribute("entities", entities);
         return "UserAnsicht";
     }
 }

@@ -5,15 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9bcd070-04e0-44b6-968c-b5bc8db6723e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../To-Do-List/src/main/resources/db/migration/V4__TwoUsersGetEntrysInList.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../To-Do-List/data/DataBase/ListEntity.frm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../To-Do-List/data/DataBase/ToDoList.frm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../To-Do-List/data/DataBase/User.frm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../To-Do-List/data/DataBase/flyway_schema_history.frm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../To-Do-List/data/DataBase/flyway_schema_history.ibd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../To-Do-List/data/DataBase/listentity.ibd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../To-Do-List/data/DataBase/todolist.ibd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../To-Do-List/data/DataBase/user.ibd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../To-Do-List/src/main/java/stellarbytestudios/todolist/webcontroller/AnmeldeRegistrierungsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../To-Do-List/src/main/java/stellarbytestudios/todolist/webcontroller/AnmeldeRegistrierungsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../To-Do-List/src/main/resources/templates/UserAnsicht.html" beforeDir="false" afterPath="$PROJECT_DIR$/../To-Do-List/src/main/resources/templates/UserAnsicht.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +65,7 @@
       <workItem from="1637134588450" duration="1325000" />
       <workItem from="1637175474854" duration="276000" />
       <workItem from="1637178193303" duration="363000" />
+      <workItem from="1638011735895" duration="1233000" />
     </task>
     <servers />
   </component>

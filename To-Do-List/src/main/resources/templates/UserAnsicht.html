@@ -25,10 +25,11 @@
     <div class="container-sm">
         Erstelle hier einen neuen Eintrag:
         <form method="post" th:action="@{/eintragAnlegen/} + ${user.userID}">
-            <table>
+            <table class="table">
                 <tr>
                     <textarea class="form-control" rows="3" name="task" placeholder="Was musst du noch erledigen?"></textarea>
                 </tr>
+                <br>
                 <tr>
                     <button type="submit" class="btn-primary">Merken</button>
                 </tr>
@@ -36,23 +37,21 @@
             </table>
         </form>
     </div>
+    <hr>
     <!-- Jetzt alle einträge -->
     <div class="container-sm">
-        Hier kannst du nun deine eigene To-Do-Liste sehen:
+        <h3>Hier kannst du nun deine eigene To-Do-Liste sehen:</h3>
     </div>
-    <hr>
     <div class="container-sm">
         <table class="table">
             <thead>
             <tr class="table-header">
-                <th>EintragID</th>
                 <th>Beschreibung</th>
                 <th>Done</th>
             </tr>
             </thead>
             <tbody th:remove="all-but-first" th:each="ListEntity : ${entities}" th:object="${ListEntity}">
             <tr class="table-bordered">
-                <td th:text="*{id}">1</td>
                 <td th:text="*{task}">mein Task</td>
                 <td><input type="checkbox" name="done" th:checked="*{done}"></td>
             </tr>

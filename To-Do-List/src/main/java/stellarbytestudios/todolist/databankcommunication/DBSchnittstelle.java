@@ -114,6 +114,10 @@ public class DBSchnittstelle {
         return einträge;
     }
 
+    /* update Methods */
+//    public void markEntityAsDone(int entityID){
+//
+//    }
 
 
     // * * * Mapper * * * //

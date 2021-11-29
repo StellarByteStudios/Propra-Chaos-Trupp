@@ -25,7 +25,7 @@
     <!-- Neuen Eintrag erstellen -->
     <div class="container-sm">
         Erstelle hier einen neuen Eintrag:
-        <form method="post" th:action="@{/eintragAnlegen/} + ${user.userID}">
+        <form method="post" th:action="@{/userpage/eintragAnlegen/} + ${user.userID}">
             <table class="table">
                 <tr>
                     <textarea class="form-control" rows="3" name="task" placeholder="Was musst du noch erledigen?"></textarea>
@@ -56,7 +56,7 @@
             <tr class="table-bordered">
                 <td th:text="*{task}">mein Task</td>
                 <td>
-                    <form method="post" th:action="@{/eintragUpdaten/} + ${user.userID()} + '/' + ${ListEntity.id}">
+                    <form method="post" th:action="@{/userpage/eintragUpdaten/} + ${user.userID()} + '/' + ${ListEntity.id}">
                         <input type="checkbox" name="done" th:checked="*{done}" onchange="this.form.submit()">
                     </form>
                 </td>

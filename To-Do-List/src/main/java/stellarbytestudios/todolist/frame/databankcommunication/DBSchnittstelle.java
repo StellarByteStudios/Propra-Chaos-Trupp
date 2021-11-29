@@ -1,17 +1,18 @@
-package stellarbytestudios.todolist.databankcommunication;
+package stellarbytestudios.todolist.frame.databankcommunication;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
-import stellarbytestudios.todolist.datacontainer.ListEntity;
-import stellarbytestudios.todolist.datacontainer.ToDoListe;
-import stellarbytestudios.todolist.datacontainer.User;
+import stellarbytestudios.todolist.core.datacontainer.ListEntity;
+import stellarbytestudios.todolist.core.datacontainer.ToDoListe;
+import stellarbytestudios.todolist.core.datacontainer.User;
+import stellarbytestudios.todolist.services.IDBSchnittstelle;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
 @Repository
-public class DBSchnittstelle {
+public class DBSchnittstelle implements IDBSchnittstelle {
     // Initialcode
     private final JdbcTemplate dataBank;
 
@@ -68,7 +69,7 @@ public class DBSchnittstelle {
     }
 
     // User mithilfe seiner ID aus der Datenbank fischen
-    public User getUserByID(int userID) {
+    public User getUserByID(int userID){
         String sqlget = """
                 select *
                 from User
@@ -84,7 +85,7 @@ public class DBSchnittstelle {
     }
 
     // Liste eines Nutzers aus der Datenbank holen
-    public ToDoListe getListFromUserID(int userID) {
+    public ToDoListe getListFromUserID(int userID){
         String sqlget = """
                 select *
                 from ToDoList
@@ -101,7 +102,7 @@ public class DBSchnittstelle {
     }
 
     // Bekomme alle Einträge einer Liste
-    public List<ListEntity> getListOfEntitys(int listID) {
+    public List<ListEntity> getListOfEntitys(int listID){
         String sqlget = """
                 select *
                 from ListEntity
@@ -115,7 +116,7 @@ public class DBSchnittstelle {
     }
 
     /* update Methods */
-    public void markEntityAsDone(int entityID) {
+    public void markEntityAsDone(int entityID){
         String sqlupdate = """
                  update ListEntity
                  set Done = 1
@@ -124,7 +125,7 @@ public class DBSchnittstelle {
         dataBank.update(sqlupdate, entityID);
     }
 
-    public void markEntityAsNotDone(int entityID) {
+    public void markEntityAsNotDone(int entityID){
         String sqlupdate = """
                  update ListEntity
                  set Done = 0
@@ -157,6 +158,4 @@ public class DBSchnittstelle {
 
         return new ListEntity(id, task, done, listID);
     }
-
-
 }

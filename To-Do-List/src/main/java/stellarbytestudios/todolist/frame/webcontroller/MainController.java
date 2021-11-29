@@ -1,4 +1,4 @@
-package stellarbytestudios.todolist.webcontroller;
+package stellarbytestudios.todolist.frame.webcontroller;
 
 //@Controller
 public class MainController {

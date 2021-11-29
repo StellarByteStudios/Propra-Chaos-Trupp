@@ -1,4 +1,4 @@
-package stellarbytestudios.todolist;
+package stellarbytestudios.todolist.frame;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

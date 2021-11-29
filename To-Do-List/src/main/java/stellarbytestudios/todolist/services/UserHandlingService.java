@@ -1,17 +1,17 @@
 package stellarbytestudios.todolist.services;
 
 import org.springframework.stereotype.Service;
-import stellarbytestudios.todolist.databankcommunication.DBSchnittstelle;
-import stellarbytestudios.todolist.datacontainer.ListEntity;
-import stellarbytestudios.todolist.datacontainer.ToDoListe;
-import stellarbytestudios.todolist.datacontainer.User;
+import stellarbytestudios.todolist.frame.databankcommunication.DBSchnittstelle;
+import stellarbytestudios.todolist.core.datacontainer.ListEntity;
+import stellarbytestudios.todolist.core.datacontainer.ToDoListe;
+import stellarbytestudios.todolist.core.datacontainer.User;
 
 import java.util.List;
 
 @Service
 public class UserHandlingService {
     // Initialcode
-    private final DBSchnittstelle dataSchnittstelle;
+    private final IDBSchnittstelle dataSchnittstelle;
 
     public UserHandlingService(DBSchnittstelle db) {
         this.dataSchnittstelle = db;

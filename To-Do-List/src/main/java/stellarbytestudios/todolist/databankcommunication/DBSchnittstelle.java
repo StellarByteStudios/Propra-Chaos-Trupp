@@ -1,7 +1,7 @@
 package stellarbytestudios.todolist.databankcommunication;
 
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 import stellarbytestudios.todolist.datacontainer.ListEntity;
 import stellarbytestudios.todolist.datacontainer.ToDoListe;
 import stellarbytestudios.todolist.datacontainer.User;
@@ -10,7 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-@Component
+@Repository
 public class DBSchnittstelle {
     // Initialcode
     private final JdbcTemplate dataBank;

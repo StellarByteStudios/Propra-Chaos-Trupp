@@ -36,7 +36,7 @@ public class AnmeldeRegistrierungsController {
     @PostMapping("/registrieren")
     public String registrieren(String username){
         userService.saveNewUser(username);
-        System.out.println("Neuer User: " + username);
+        System.out.println("Neuer User registriert: " + username);
         return "ErfolgreichRegistriert";
     }
 
@@ -91,7 +91,7 @@ public class AnmeldeRegistrierungsController {
         userService.setNewEntryInList(liste, task);
 
         // Konsolenausgabe
-        System.out.println("Der User : " + angemeldeter.username() + " hat die Nachricht: '" + task + "' abgesetzt");
+        System.out.println("Der User: " + angemeldeter.username() + " hat die Aufgabe: '" + task + "' abgesetzt");
 
         // redirect vorbereiten
         readds.addAttribute("username", angemeldeter.username());

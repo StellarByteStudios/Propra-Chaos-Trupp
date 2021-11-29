@@ -55,7 +55,11 @@
             <tbody th:remove="all-but-first" th:each="ListEntity : ${entities}" th:object="${ListEntity}">
             <tr class="table-bordered">
                 <td th:text="*{task}">mein Task</td>
-                <td><input type="checkbox" name="done" th:checked="*{done}"></td>
+                <td>
+                    <form method="post" th:action="@{/eintragUpdaten/} + ${user.userID()} + '/' + ${ListEntity.id}">
+                        <input type="checkbox" name="done" th:checked="*{done}" onchange="this.form.submit()">
+                    </form>
+                </td>
             </tr>
             </tbody>
         </table>

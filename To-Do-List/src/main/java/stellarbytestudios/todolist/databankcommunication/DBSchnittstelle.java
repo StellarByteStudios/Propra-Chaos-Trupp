@@ -115,9 +115,23 @@ public class DBSchnittstelle {
     }
 
     /* update Methods */
-//    public void markEntityAsDone(int entityID){
-//
-//    }
+    public void markEntityAsDone(int entityID) {
+        String sqlupdate = """
+                 update ListEntity
+                 set Done = 1
+                 where ListEntityID = ?         
+                """;
+        dataBank.update(sqlupdate, entityID);
+    }
+
+    public void markEntityAsNotDone(int entityID) {
+        String sqlupdate = """
+                 update ListEntity
+                 set Done = 0
+                 where ListEntityID = ?         
+                """;
+        dataBank.update(sqlupdate, entityID);
+    }
 
 
     // * * * Mapper * * * //

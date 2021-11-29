@@ -11,8 +11,6 @@ import stellarbytestudios.todolist.datacontainer.ToDoListe;
 import stellarbytestudios.todolist.datacontainer.User;
 import stellarbytestudios.todolist.services.UserHandlingService;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @Controller
@@ -26,9 +24,9 @@ public class AnmeldeRegistrierungsController {
     }
 
     // * * * HTML-Mappings * * * //
-    // Startseite / Registrierung
+    // Startseite / Anmelden
     @GetMapping("/")
-    public String startseiteRegistrierung(Model m){
+    public String startseite(Model m){
         return "RegistrierungsForm";
     }
 
@@ -47,7 +45,7 @@ public class AnmeldeRegistrierungsController {
     }
 
     // Führt die Anmeldung durch und leitet auf die User eigene Seite um
-    @GetMapping("/anmeldung")
+    @GetMapping("/userseite")
     public String anmeldung(Model m, String username){
 
         // Erstmal den User aus der Datenbank holen
@@ -61,13 +59,6 @@ public class AnmeldeRegistrierungsController {
 
         // Die zum User gehörige To-Do-Liste aus der Datenbank holen
         ToDoListe liste = userService.getListFromUser(angemeldeter);
-
-        // Wenn der User keine Liste hat wird eine Leere erzeugt
-        // - - - - - - - Muss noch überarbeitet werden - - - - - - - - - //
-//        if (liste == null) {
-//            System.out.println("Dieser User hat noch keine Liste");
-//            liste = new ToDoListe(1, angemeldeter.userID());
-//        }
 
         // Hole alle Einträge aus der Liste
         List<ListEntity> entities = userService.getAllEntities(liste);
@@ -96,6 +87,28 @@ public class AnmeldeRegistrierungsController {
         // redirect vorbereiten
         readds.addAttribute("username", angemeldeter.username());
 
-        return "redirect:/anmeldung";
+        return "redirect:/userseite";
+    }
+    @PostMapping("/eintragUpdaten/{userID}/{entityID}")
+    public String eintragabhaken(@PathVariable int userID,
+                                 @PathVariable int entityID,
+                                 Boolean done,
+                                 RedirectAttributes readds){
+
+        // Erstmal den User und seine Liste aus der Datenbank holen
+        User angemeldeter = userService.getUserById(userID);
+
+        // Input validieren (wenn checkbox false -> done == null)
+        if(done == null){ done = false; }
+        // Eintragsänderung durchführen
+         userService.updateEntryWithID(entityID, done);
+
+        // Konsolenausgabe
+        System.out.println("Der User: " + angemeldeter.username() + " hat eine Aufgabe gesetzt auf: " + done);
+
+        // redirect vorbereiten
+        readds.addAttribute("username", angemeldeter.username());
+
+        return "redirect:/userseite";
     }
 }

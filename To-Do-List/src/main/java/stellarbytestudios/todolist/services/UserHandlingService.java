@@ -58,4 +58,9 @@ public class UserHandlingService {
         List<ListEntity> einträge = dataSchnittstelle.getListOfEntitys(liste.ListID());
         return einträge;
     }
+
+    public void updateEntryWithID(int entityID, Boolean done) {
+        if(done){ dataSchnittstelle.markEntityAsDone    (entityID); }
+        else    { dataSchnittstelle.markEntityAsNotDone (entityID); }
+    }
 }

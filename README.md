@@ -19,6 +19,10 @@ Hier sammeln wir alle Projekte, die wir im Laufe des Moduls Propra so entwickeln
 5. ### TicTacToe
     *Praktische Übung*  
     Man kann halt Tic tac toe spielen
+6. ### To-Do-Liste
+    Eine Übung auf den Leitfragen. Man kann hier einen Accound anlegen, sich mit diesem Anmelden und eine eigene To-Do-Liste verwalten.
+    Gedacht um einerseits die Basicx zun wiederholen (Requestmapping, Thymeleaf & co.) und aufteilen in Architekturteile sowie arbeiten mit Datenbanken.
+    Andererseits soll es auch grundlage sein um eigene Tests zu schreiben und zu üben
 
 ## Vorlagen
 1. ### HTML-Lehrstuhlzugänge

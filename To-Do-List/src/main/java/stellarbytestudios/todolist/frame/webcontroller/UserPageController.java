@@ -7,16 +7,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import stellarbytestudios.todolist.core.datacontainer.ToDoListe;
 import stellarbytestudios.todolist.core.datacontainer.User;
-import stellarbytestudios.todolist.services.UserHandlingService;
+import stellarbytestudios.todolist.services.ToDoListService;
 
 @Controller
 @RequestMapping("/userpage")
 public class UserPageController {
 
     // Initialcode
-    private final UserHandlingService service;
+    private final ToDoListService service;
 
-    public UserPageController(UserHandlingService service) {
+    public UserPageController(ToDoListService service) {
         this.service = service;
     }
 

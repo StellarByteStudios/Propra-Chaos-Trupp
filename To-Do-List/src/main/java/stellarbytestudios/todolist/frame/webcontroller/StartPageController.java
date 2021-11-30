@@ -3,15 +3,15 @@ package stellarbytestudios.todolist.frame.webcontroller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import stellarbytestudios.todolist.services.UserHandlingService;
+import stellarbytestudios.todolist.services.ToDoListService;
 
 @Controller
 public class StartPageController {
     // Initialcode
-    private final UserHandlingService service;
+    private final ToDoListService service;
 
-    public StartPageController(UserHandlingService userService) {
-        this.service = userService;
+    public StartPageController(ToDoListService service) {
+        this.service = service;
     }
 
 

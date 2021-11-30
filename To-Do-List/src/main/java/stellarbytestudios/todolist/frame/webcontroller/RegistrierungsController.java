@@ -5,16 +5,16 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import stellarbytestudios.todolist.services.UserHandlingService;
+import stellarbytestudios.todolist.services.ToDoListService;
 
 @Controller
 @RequestMapping("/registrierung")
 public class RegistrierungsController {
 
     // Initialcode
-    private final UserHandlingService service;
+    private final ToDoListService service;
 
-    public RegistrierungsController(UserHandlingService service) {
+    public RegistrierungsController(ToDoListService service) {
         this.service = service;
     }
 

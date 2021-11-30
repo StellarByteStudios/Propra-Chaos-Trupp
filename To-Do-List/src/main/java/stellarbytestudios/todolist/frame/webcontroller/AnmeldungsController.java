@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import stellarbytestudios.todolist.core.datacontainer.ListEntity;
 import stellarbytestudios.todolist.core.datacontainer.ToDoListe;
 import stellarbytestudios.todolist.core.datacontainer.User;
-import stellarbytestudios.todolist.services.UserHandlingService;
+import stellarbytestudios.todolist.services.ToDoListService;
 
 import java.util.List;
 
@@ -16,9 +16,9 @@ import java.util.List;
 public class AnmeldungsController {
 
    // Initialcode
-    private final UserHandlingService service;
+    private final ToDoListService service;
 
-    public AnmeldungsController(UserHandlingService service) {
+    public AnmeldungsController(ToDoListService service) {
         this.service = service;
     }
 

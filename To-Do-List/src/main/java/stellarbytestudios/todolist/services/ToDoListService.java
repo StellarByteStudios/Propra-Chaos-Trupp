@@ -9,11 +9,11 @@ import stellarbytestudios.todolist.core.datacontainer.User;
 import java.util.List;
 
 @Service
-public class UserHandlingService {
+public class ToDoListService {
     // Initialcode
-    private final IDBSchnittstelle dataSchnittstelle;
+    private final DBSchnittstelle dataSchnittstelle;
 
-    public UserHandlingService(DBSchnittstelle db) {
+    public ToDoListService(DBSchnittstelle db) {
         this.dataSchnittstelle = db;
     }
 

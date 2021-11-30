@@ -5,7 +5,6 @@ import stellarbytestudios.todolist.core.datacontainer.ToDoListe;
 import stellarbytestudios.todolist.core.datacontainer.User;
 
 import java.util.List;
-
 public interface IDBSchnittstelle {
     /* save Methods */
     // Neuen Nutzer Speichern

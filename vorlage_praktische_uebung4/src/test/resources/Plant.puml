@@ -1,0 +1,16 @@
+@startuml
+[web] <<..controller..>>
+[service] <<..service..>>
+[database] <<..persistence..>>
+[stereotypes] <<..stereotypes..>>
+[domain] <<..kontaktliste..>>
+
+[web] --> [service]
+[database] --> [service]
+[web] --> [stereotypes]
+[database] --> [stereotypes]
+[service] --> [stereotypes]
+[domain] --> [stereotypes]
+[service] --> [domain]
+@enduml
+

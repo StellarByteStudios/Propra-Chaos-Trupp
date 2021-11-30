@@ -1,4 +1,4 @@
-insert into User (Username)
+insert into User (UserID, Username)
 values ('Martin'),
        ('Jana'),
        ('Moritz'),

@@ -1,5 +1,17 @@
-package stellarbytestudios.todolist.frame;
-
+//package stellarbytestudios.todolist.frame;
+//
+//
+//import org.junit.jupiter.api.DisplayName;
+//import org.junit.jupiter.api.Test;
+//import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.boot.test.autoconfigure.jdbc.JdbcTest;
+//import org.springframework.jdbc.core.JdbcTemplate;
+//import org.springframework.test.context.ActiveProfiles;
+//import org.springframework.test.context.jdbc.Sql;
+//import stellarbytestudios.todolist.core.datacontainer.User;
+//import stellarbytestudios.todolist.frame.databankcommunication.DBSchnittstelle;
+//
+//import static org.assertj.core.api.Assertions.assertThat;
 //
 //@JdbcTest
 //@ActiveProfiles("test")

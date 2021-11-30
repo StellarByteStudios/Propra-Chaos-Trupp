@@ -15,4 +15,4 @@ jobs:
         with:
           issue-number: ${{ github.event.issue.number }}
           body: |
-            Lass es, es wird eh nix
+            Warum machst du hier ein neues Issue auf? Wenn das mein owner erfährt!

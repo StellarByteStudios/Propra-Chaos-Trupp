@@ -5,13 +5,14 @@ import org.springframework.stereotype.Repository;
 import stellarbytestudios.todolist.core.datacontainer.ListEntity;
 import stellarbytestudios.todolist.core.datacontainer.ToDoListe;
 import stellarbytestudios.todolist.core.datacontainer.User;
+import stellarbytestudios.todolist.services.IDBSchnittstelle;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
 @Repository
-public class DBSchnittstelle{
+public class DBSchnittstelle implements IDBSchnittstelle {
     // Initialcode
     private final JdbcTemplate dataBank;
 

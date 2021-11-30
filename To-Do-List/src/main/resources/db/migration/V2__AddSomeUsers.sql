@@ -5,4 +5,4 @@ values ('Martin'),
        ('User1'),
        ('Shadowhunter'),
        ('Mike'),
-       ('Lotte')
+       ('Lotte');

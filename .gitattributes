@@ -1,0 +1,2 @@
+# Excluden der CSS Files von Bootstrap
+*.css linguist-vendored
